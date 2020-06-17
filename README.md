@@ -2,7 +2,7 @@ Wireshark 기반의 프로토콜 메시지 분석기를 LUA 스크립트 언어�
 
 ## Editor
 Visual Studio Code
-Test
+Test2
 ## LUA 스크립트 설치
 1. 관리자 모드 CMD 창에서 아래 명령을 수행합니다. [LUA 스크립트 파일 이름] 부분에는 복사하려는 LUA 스크립트 파일명으로 대체합니다. 
 
