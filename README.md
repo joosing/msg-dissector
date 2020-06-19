@@ -9,15 +9,12 @@ Visual Studio Code
 email - jsing@contec.kr   
 homepage - http://www.contec.kr/
 
-## LUA 스크립트 설치
+## Insatll lua script 
 1. In the Administrator Mode CMD window, run the following command. In the [LUA script file name] section, replace the LUA script file name you want to copy.
-
 ```
 copy /Y ".\[LUA script file name].lua" "C:\Program Files\Wireshark\plugins\[LUA script file name].lua"
 ```
-
-2. It is automatically reflected when you run Wireshark.
-
-3. If Wireshark is running, it will be applied dynamically when Ctrl+Shift+L is entered.
+2. It is automatically reflected when you run Wireshark.  
+3. If Wireshark is running, it will be applied dynamically when Ctrl+Shift+L is entered.  
 
 "I will sing to the LORD, for he has been good to me" <Psalms 13:6> 
