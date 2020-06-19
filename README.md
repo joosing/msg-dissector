@@ -1,15 +1,19 @@
-Wireshark 기반의 프로토콜 메시지 분석기를 LUA 스크립트 언어를 사용하여 개발합니다. 
-
+We share some lua scripts that works as msg dissector to display clearly your data in wireshark.  
+You can achive the following!
+![IMAGE ALT TEXT HERE](./document/image/LuaDissector.png)
+![IMAGE ALT TEXT HERE](./document/image/lilstView.png)
 ## Editor
 Visual Studio Code
-
-## LUA 스크립트 설치
-1. 관리자 모드 CMD 창에서 아래 명령을 수행합니다. [LUA 스크립트 파일 이름] 부분에는 복사하려는 LUA 스크립트 파일명으로 대체합니다. 
-
+## Insatll lua script 
+1. In the Administrator Mode CMD window, run the following command. In the [LUA script file name] section, replace the LUA script file name you want to copy.
 ```
-copy /Y ".\[LUA 스크립트 파일 이름].lua" "C:\Program Files\Wireshark\plugins\[LUA 스크립트 파일 이름].lua"
+copy /Y ".\[LUA script file name].lua" "C:\Program Files\Wireshark\plugins\[LUA script file name].lua"
 ```
+2. It is automatically reflected when you run Wireshark.  
+3. If Wireshark is running, it will be applied dynamically when Ctrl+Shift+L is entered.  
+## Contact
+email - jsing@contec.kr   
+homepage - http://www.contec.kr/
 
-2. Wireshark 실행 시 자동 반영됩니다. 
 
-3. Wireshark 실행 중이라면 Ctrl+Shift+L 입력 시 동적으로 적용됩니다. 
+"I will sing to the LORD, for he has been good to me" <Psalms 13:6> 
