@@ -17,4 +17,4 @@ email - jsing@contec.kr
 homepage - http://www.contec.kr/
 
   
-"I will sing to the LORD, for he has been good to me" <Psalms 13:6> 
+"I will sing to the LORD, for he has been good to me" < Psalms 13:6 > 
