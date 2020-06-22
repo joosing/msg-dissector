@@ -20,7 +20,18 @@ cmdType = ProtoField.uint8("rot2.cmdType", "Command Type", base.HEX, {[0x0F]="ST
 actAz = ProtoField.float("rot2.actAz", "Actual Azimuth", base.DEC )
 actEl = ProtoField.float("rot2.actEl", "Actual Elevation", base.DEC )
 
-local cmdTreeView = 
+
+local respTreeViewItems = 
+{
+    startFlag,
+    actAz,
+    pulseVertical,
+    actEl,
+    pulseHorisontal,
+    endFlag,
+}
+
+local cmdTreeViewItems = 
 {
     startFlag,
     cmdAz,
@@ -31,14 +42,10 @@ local cmdTreeView =
     endFlag,
 }
 
-local respTreeView = 
+local treeViewItemsMap = 
 {
-    startFlag,
-    actAz,
-    pulseVertical,
-    actEl,
-    pulseHorisontal,
-    endFlag,
+    [12] = respTreeViewItems,
+    [13] = cmdTreeViewItems,
 }
 
 local rot2Items =
@@ -54,6 +61,7 @@ local rot2Items =
     cmdType = cmdType,
 }
 
+
 jejuLpAcsProto.fields = rot2Items
 
 function jejuLpAcsProto.init()
@@ -67,28 +75,34 @@ function jejuLpAcsProto.dissector(buffer, packetInfo, detailTreeView)
     local pktlen = buffer:len()
     local fields = { }
 
-    -- 중요! tvb 인덱스는 0부터 / LUA 배열은 인덱스 1부터 
-    topTreeView = detailTreeView:add(jejuLpAcsProto, buffer(0,pktlen)) 
+    local result = verifyData(buffer)
 
-    split(buffer(0,pktlen), fields)
-
-     if pktlen == 12 then
-        
-        for i, token in ipairs(fields) do
-            topTreeView:add(respTreeView[i], buffer:range(token.start,token.len), token.value)
-        end    
-
-    elseif pktlen == 13 then
-        
-        for i, token in ipairs(fields) do
-            topTreeView:add(cmdTreeView[i], buffer:range(token.start,token.len), token.value)
-        end    
+    if result == false then
+        return pktlen
     end
+
+    splitFields(buffer(0,pktlen), fields)
+
+    treeViewItems = treeViewItemsMap[pktlen];
+
+    displayFields(buffer, detailTreeView, fields, treeViewItems )
 
     return pktlen
 end
 
-function split(data, fields)
+function verifyData(buffer)
+   
+    local pktlen = buffer:len()
+
+    if pktlen == 12 or pktlen == 13 then
+        return true
+    else
+        return false
+    end
+
+end
+
+function splitFields(data, fields)
 
     if data:len() == 12 then -- rx status
 
@@ -111,6 +125,16 @@ function split(data, fields)
     else 
         -- not defined
     end
+
+end
+
+function displayFields(buffer, detailTreeView, fields, viewItems)
+
+    local topTreeView = detailTreeView:add(jejuLpAcsProto, buffer(0,pktlen)) 
+
+    for i, field in ipairs(fields) do
+        topTreeView:add(viewItems[i], buffer:range(field.start,field.len), field.value)
+    end    
 
 end
 
