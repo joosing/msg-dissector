@@ -1,8 +1,9 @@
-We share some lua scripts that works as msg dissector to display clearly your data in wireshark.  
+We share some lua scripts that works as msg dissector to display clearly your data in wireshark. You can also filter your business protocol field. 
 You can achive the following!  
-  
+
 ![IMAGE ALT TEXT HERE](./document/image/LuaDissector.png)
 ![IMAGE ALT TEXT HERE](./document/image/lilstView.png)
+
 ## Editor
 Visual Studio Code
 ## Insatll lua script 
