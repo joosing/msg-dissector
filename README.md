@@ -1,5 +1,4 @@
-We share some lua scripts that works as msg dissector to display your data clearly in wireshark. You can also filter your business protocol field. 
-You can achive the following!  
+We share some lua scripts that are applied to our business field (satellite ground station). It works as a message dissector in Wireshark. It is helpful when you analyze your own protocol data. You just have to see your automatically dissected and decoded each data field. and you can also filter your own protocol data field. It will make you very efficient in debuging time. 
 
 ![IMAGE ALT TEXT HERE](./document/image/LuaDissector.png)
 ![IMAGE ALT TEXT HERE](./document/image/lilstView.png)
