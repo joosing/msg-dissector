@@ -1,4 +1,4 @@
-We share some lua scripts that are applied to our business field (satellite ground station). It works as a message dissector in Wireshark. It is helpful when you analyze your own protocol data. You just have to see your automatically dissected and decoded each data field. and you can also filter your own protocol data field. It will make you very efficient in debuging time. 
+We share some lua scripts that are applied to our business field (satellite ground station). It works as a message dissector in Wireshark. It is helpful when you analyze your own application protocol data. You just have to see your automatically dissected and decoded each data field. and you can also filter your own protocol data field. It will make you very efficient in debuging time. 
 
 ![IMAGE ALT TEXT HERE](./document/image/LuaDissector.png)
 ![IMAGE ALT TEXT HERE](./document/image/lilstView.png)
@@ -13,8 +13,4 @@ copy /Y ".\[LUA script file name].lua" "C:\Program Files\Wireshark\plugins\[LUA 
 2. It is automatically reflected when you run Wireshark.  
 3. If Wireshark is running, it will be applied dynamically when Ctrl+Shift+L is entered.  
 ## Contact
-email - jsing@contec.kr   
-homepage - http://www.contec.kr/
-
-  
-"I will sing to the LORD, for he has been good to me" < Psalms 13:6 > 
+email - joosing711@gmail.com 
