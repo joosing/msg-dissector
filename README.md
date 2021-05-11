@@ -5,7 +5,7 @@
 We share some lua scripts that are applied to our business field (satellite ground station). It works as a message dissector in Wireshark. It is helpful when you analyze your own application protocol data. You just have to see your automatically dissected and decoded each data field. and you can also filter your own protocol data field. It will make you very efficient in debuging time. 
 
 ![IMAGE ALT TEXT HERE](./document/image/LuaDissector.png)
-![image](https://user-images.githubusercontent.com/34666301/117848327-2a693380-b2be-11eb-819b-7c69419214b0.png)
+![image](https://user-images.githubusercontent.com/34666301/117848957-cc891b80-b2be-11eb-8a67-ad9f31856001.png)
 
 ## Editor
 Visual Studio Code
